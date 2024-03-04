@@ -1,14 +1,14 @@
 //Задача номер 1
 
 const factorial = (n) => {
-    if (n === 1) {
+    if (n <= 1) {
         return 1
     }
 
     return n * factorial(n - 1)
 }
 
-console.log(factorial(5))
+console.log(factorial(-1))
 
 
 
@@ -63,5 +63,9 @@ console.log(stringLength('Привет я ар мении прибытddь'))
 // const str = 'usfh jsjfjjfs jsjf'
 // console.log(str.split(' '))
 
-//Задача номер 3
 
+//Задача номер 5
+
+function rar(arr) {
+
+}
