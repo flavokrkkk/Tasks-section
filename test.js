@@ -1,31 +1,31 @@
 //Рекурсия и стек
 
-let count = 0
+// let count = 0
 
-function recurse () {
-   if (count === 5) {
-        return 'done'
-   } 
-   count++ 
-   return recurse()
-}
+// function recurse () {
+//    if (count === 5) {
+//         return 'done'
+//    } 
+//    count++ 
+//    return recurse()
+// }
 
-console.log(recurse())
-console.log('count: ', count)
-
-
+// console.log(recurse())
+// console.log('count: ', count)
 
 
-function pow(x, y) {
-   if (y === 0) {
-         return 1
-   }
-
-   return x * pow(x, y - 1)
-}
 
 
-const result = pow(5, 3)
+// function pow(x, y) {
+//    if (y === 0) {
+//          return 1
+//    }
+
+//    return x * pow(x, y - 1)
+// }
+
+
+// const result = pow(5, 3)
 
 
 // function factorial(n) {
@@ -84,46 +84,215 @@ const result = pow(5, 3)
 
 //Рекурсия 
 
-let t = 0
+// let t = 0
 
-const myFn = () => {
-   t++
-   console.log(t)
-   if (t === 100) {
-      return 1
-   }
-   else {
-      myFn()
-   }
-}
+// const myFn = () => {
+//    t++
+//    console.log(t)
+//    if (t === 100) {
+//       return 1
+//    }
+//    else {
+//       myFn()
+//    }
+// }
 
-myFn()
+// myFn()
 
 
 //Аналог рекурсии с помощью стека
 
-const myFn2 = () => {
-   let out = ''
-   for (let i = 1; i <= 30; i++) {
-      out += i + ' '
-   }
-   console.log(out)
-}
+// const myFn2 = () => {
+//    let out = ''
+//    for (let i = 1; i <= 30; i++) {
+//       out += i + ' '
+//    }
+//    console.log(out)
+// }
 
-myFn2()
+// myFn2()
 
 //Пример с рекурсией 
-let i = 0
-let out = ''
 
-function myFn3() {
-   i++
-   out += i + ' '
-   if (i >= 20) {
+// let i = 0 
+// out = ''
+
+// const myFn3 = () => {
+//    i++
+//    out += i + ' '
+
+//    if (i >= 20) {
+//       return 1
+//    } else {
+//       return myFn3()
+//    }
+// }
+
+// myFn3()
+// console.log(out)
+
+// let arr = []
+
+
+// for (let i = 10; i > 0; i--) {
+//    console.log(i)
+// }
+
+// let g = 10
+
+// const myFn5 = () => {
+//    g--
+//    if (g <= 0) {
+//       return 1
+//    } else {
+//    console.log(g)
+//    return myFn5()
+//    }
+// }
+
+// myFn5()
+
+//Решение 10-й задачи  
+
+
+// const func = (array = [], n) => {
+//    if (n <= 0) {
+//       return 1
+//    } else {
+//       func(n-1)
+//       console.log(n)
+//       array.push(n)
+//    }
+// }
+
+// func([], 5)
+// console.log(array)
+
+
+
+// const func = (arraay = [], n) => {
+//    if (n <= 0) {
+//       return 1
+//    }
+//    func(n - 1) 
+//    console.log(n)
+//    return arraay.push(n)
+// }
+
+// console.log(func([], 5))
+
+
+
+// const func = (arr4, n) => {
+//    if (n <= 0) {
+//       return 1
+//    } else {
+//       console.log(n)
+//       arr4.push(n)
+//        func([], n - 1)
+//        console.log(arr4)
+//    }
+// }
+
+// func([], 9)
+// console.log(newArr)
+
+
+// let i = 21
+// let out = ' '
+
+// const func = () => {
+//       i--
+//       out += i + ' '
+//    if (i <= 0) {
+//       return 
+//    } else {
+//       return func()
+//    }
+// }
+
+// func()
+// console.log(out)
+
+
+//Задача поиграться
+
+// function randomInteger(min, max) {
+//    let rand = min + Math.random() * (max + 1 - min)
+//    return Math.floor(rand)
+// }
+
+
+// let s1 = 0
+
+//На рекурсии
+
+// function theMoneyRecursion() {
+//    if (s1 >= 300) {
+//       return
+//    }
+//    let m = randomInteger(0, 100)
+//    console.log('add: ' + m)
+//    s1 += m
+//    console.log('capital: ', s1)
+//    theMoneyRecursion()
+// }
+
+// theMoneyRecursion()
+
+// const factorial = (n) => {
+//       if (n <= 0) {
+//          return 1
+//       }
+
+//       //Будет вызываться до тех пор пока n не будет === 1
+//       return n * factorial(n - 1)
+// }
+
+// console.log(factorial(8))
+
+
+//Числа Фибоначи - 1, 1, 2, 3, 5, 8, 13, 21
+
+// const factorial = (n) => {
+
+//    if (n <= 0) {
+//       console.error('Factorial вызван с неподходящим значением!')
+//    }  else {
+//       return n * factorial(n - 1)
+//    }
+// }
+
+// console.log(factorial(-4))
+
+// const fibonachi = (n) => {
+//    if (n === 1 || n === 2) {
+//       return 1
+//    } else {
+//       return fibonachi( n - 1 ) + fibonachi( n - 2 )
+//    }
+// }
+
+// console.log(fibonachi(3))
+
+// const fibonachi = (n) => {
+//    if (n === 1 || n === 2) {
+//       return 1;
+//    } else {
+//       return fibonachi(n - 1) + fibonachi(n - 2)
+//    }
+// }
+
+console.log(fibonachi(8))
+
+const fibonachi = (n) => {
+   if (n === 1 || n === 2) {
       return 1
    } else {
-      myFn3()
+      return fibonachi( n - 1 ) + fibonachi( n - 2 )
    }
 }
 
-myFn3()
+console.log(fibonachi(8))
+
+

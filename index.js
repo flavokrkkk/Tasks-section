@@ -14,6 +14,20 @@ console.log(factorial(-1))
 
 //Задача номер 2 ================================================
 
+function stringLength(str) {
+    let newArr = str.split(' ')
+    let max = 0
+
+    for (let i = 0; i < newArr.length; i++) {
+        if (newArr[i].length > max) {
+            max = newArr[i].length
+        }
+    }
+    return max
+}
+
+console.log(stringLength('dwdwd wdwd sfsf as'))
+
 // const stringLength = (str) => {
 //     str.split().map(el => {
 //         console.log(el.length)
@@ -46,34 +60,12 @@ console.log(factorial(-1))
 //     }
 // }
 
-function stringLength(str) {
-    let newArr = str.split(' ')
-    let max = 0
-
-    for (let i = 0; i < newArr.length; i++) {
-        if (newArr[i].length > max) {
-            max = newArr[i].length
-        }
-    }
-    return max
-}
-
-console.log(stringLength('dwdwd wdwd sfsf as'))
-
 // const str = 'usfh jsjfjjfs jsjf'
 // console.log(str.split(' '))
 
 
 
-
 //Задача номер 5 =================================================
-
-// const str = 'hello bob'
-
-// console.log(str.trim().split(/\s+/).map(w => {
-//     return w[0].toUpperCase() + w.substring(1)
-// }).join(' ')) 
-
 
 function upRegister(str) {
     return str.trim().split(/\s+/).map(w => {
@@ -84,6 +76,11 @@ function upRegister(str) {
 console.log(upRegister('привет боб'))
 
 
+// const str = 'hello bob'
+
+// console.log(str.trim().split(/\s+/).map(w => {
+//     return w[0].toUpperCase() + w.substring(1)
+// }).join(' ')) 
 
 
 
@@ -97,7 +94,7 @@ function testTask(str, num) {
         return str.slice(0, num) + '...' // извлекаем часть строки и тем самым делаем ограничение
     } else {
         return str
-    }
+    }ы
     
 }
 
@@ -132,6 +129,21 @@ let inp = prompt("введите количество подмассивов")
 
 // Задача номер 10  ================================================
 
+let array = []
+
+const func = (n) => {
+   if (n <= 0) {
+      return 1
+   } else {
+      array.push(n)
+      return func(n - 1)
+   }
+}
+
+func(5)
+console.log(array)
+
+
 // function recurse(n) {
 //     let arr = []
 //     count = 0
@@ -142,7 +154,7 @@ let inp = prompt("введите количество подмассивов")
 //     count++
 //     return recurse()
 // }
-
+wswws
 // console.log(recurse(5))
 
 // const str = 'Hello'
