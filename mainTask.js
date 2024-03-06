@@ -1,3 +1,5 @@
+//Решил: 1, 2, 3, 4, 5, 10
+
 //Задача номер 1 ================================================
 
 const factorial = (n) => {
@@ -154,10 +156,28 @@ console.log(array)
 //     count++
 //     return recurse()
 // }
-wswws
 // console.log(recurse(5))
 
 // const str = 'Hello'
 // console.log(str.slice(0, 4))
 
 // console.log(str.substring(0, 9))
+
+//Тренировка с рекурсией и подмассивами - на выходе должны получить целый массив чисел
+
+function flatten(...data) {
+   console.log(data)
+   const result = []
+   for(let i = 0;i < data.length; i++){
+         const currentEl = data[i]
+         if (Array.isArray(currentEl)){
+            result.push(...flatten(...currentEl))
+         } else {
+            result.push(currentEl)
+         }
+   }
+   return result
+}
+
+console.log(flatten(1, [2, [[3]]], 4, 5, [6, [7]]))
+console.log(flatten('a', ['b', 2], 3, null, [[4], ['c']]))
