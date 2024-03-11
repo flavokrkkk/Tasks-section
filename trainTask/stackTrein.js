@@ -262,16 +262,48 @@
 
 // Польская нотация
 
-const calculate = (expression) => {
-        const arr = expression.split(' ') //получаем массив с элементами наших значений
-        const stack = []
+//pop - удаляет последний элемент массива и возвращает его
+//push - добавляет новый элемент в конец массива и возвращает новую длинну
+//shift - удаляет первый элемент массива и возвращает его
+//unshift - добавляет новый элемент в начало массива и возвращает новую длинну массива
 
+// const calculate = (expression) => {
+//         const arr = expression.split(' ') //получаем массив с элементами наших значений
+//         const stack = [] //массив в который будем сохранять результат
 
-}
+//         while(arr.length) {
+//             const el = arr.pop() // цепляем значения из массива
+//             const numberedEl = Number(el) // подставляем каждый елемент в Number и делаем проверку
 
-console.log(calculate('+ 3 5'), 8)
-console.log(calculate('* + 2 2 3'), 12)
-console.log(calculate('/ + 3 5 * 2 2'), 2)
+//             if (!isNaN(numberedEl)) {
+//                 stack.push(numberedEl) // если число, то пушим его в стек
+//                 continue;
+//             }
+
+//             const firstNum = stack.pop()
+//             const secondNum = stack.pop()
+
+//             switch (el) {
+//                 case '+' :
+//                     stack.push(firstNum + secondNum)
+//                     break
+//                 case '-':
+//                     stack.push(firstNum - secondNum)
+//                     break;
+//                 case '/':
+//                     stack.push(firstNum / secondNum)
+//                     break;
+//                 case '*':
+//                     stack.push(firstNum *   secondNum)
+//                     break;
+//             }
+//         }
+//         return stack[0]
+// }
+
+// console.log(calculate('+ 3 5'), 8)
+// console.log(calculate('* + 2 2 3'), 12)
+// console.log(calculate('/ + 3 5 * 2 2'), 2)
 
 
 // //Цикл while
@@ -285,8 +317,20 @@ console.log(calculate('/ + 3 5 * 2 2'), 2)
 // }
 
 
+// const flatten = (...data) => {
+//     let result = []
+//     for(let i = 0; i < data.length; i++) {
+//         let currentEl = data[i]
+//         if(Array.isArray(currentEl)) {
+//             result.push(...flatten(...currentEl))
+//         } else {
+//             result.push(currentEl)
+//         } 
+//     }
+//     return result
+// }
 
-const 
 
-console.log(flatten(1, [[2, [[[3]]]], [[[4, [5]]], [[6, [7]]]]]))
-console.log(flatten('a', ['b', 2], 3, null, [[4], ['c']]))
+// console.log(flatten(1, [[2, [[[3]]]], [[[4, [5]]], [[6, [7]]]]]))
+// console.log(flatten('a', ['b', 2], 3, null, [[4], ['c']]))
+
