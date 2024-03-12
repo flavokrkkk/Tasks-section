@@ -589,19 +589,319 @@
 
 
 // Задача - удалить дубликаты из массива
-const arr = [1, 1, 1, 4, 4, 6, 6, 9, 3, 4, 7, 7]
+// const arr = [1, 1, 1, 4, 4, 6, 6, 9, 3, 4, 7, 7]
 
-const removeDuplication = (arr) => {
-    for(let i = 0; i < arr.length - 1; i++) {
-        for(let j = i + 1; i < arr.length; j++) {
-            if (arr[j] === arr[i]) {
-                arr.splice(j, 1)
-                j--
-            }
-        } 
+// const removeDuplication = (arr) => {
+//     for(let i = 0; i < arr.length - 1; i++) {
+//         for(let j = i + 1; i < arr.length; j++) {
+//             if (arr[j] === arr[i]) {
+//                 arr.splice(j, 1)
+//                 j--
+//             }
+//         } 
+//     }
+//     return arr
+// }
+
+// const result = removeDuplication(arr)
+// console.log(...result)
+
+//Задача - отсортировать массив объектов по ключам
+
+// const sortByKey = (arr, key, isDesc) => {
+//     const {length} = arr
+//     for(let i = 0; i < length - 1; i++) {
+//         let minIndex =  i
+//         for(let j = i + 1; j < length; j++ ) {
+
+//             const condition = isDesc 
+//             ? arr[minIndex][key] < arr[j][key] 
+//             : arr[minIndex][key] > arr[j][key]
+
+//             if(condition) {
+//                 minIndex = j
+//             }
+//         }
+//         if(minIndex !== i ) {
+//             const temporary = arr[i]
+//             arr[i] = arr[minIndex]
+//             minIndex = temporary
+//         }
+//     }
+
+//     return arr
+// }
+
+// const arr = [
+//     {price: 30, count: 200},
+//     {price: 90, count: 40},
+//     {price: 10, count: 100},
+//     {price: 50, count: 500},
+// ]
+
+// const resultByPrice = sortByKey(arr, 'price', false)
+// console.log(resultByPrice)
+
+// const resultByCount = sortByKey(arr, 'count', false)
+// console.log(resultByCount)
+
+// const arr = [2, 4, 6, 1, 9]
+
+// const selectedSort = (arr) => {
+//     for(let i = 0; i < arr.length - 1; i++) {
+//         let indexMin = i
+//         for(let j = i + 1; j < arr.length; j++) {
+//             if(arr[indexMin] > arr[j]) {
+//                 indexMin = j
+//             }
+//         }
+
+//         const temporary = arr[i]
+//         arr[i] = arr[indexMin]
+//         arr[indexMin] = temporary
+//     }
+//     return arr
+// }
+
+
+// const result = selectedSort(arr)
+
+// const binarySearch = (arr, value) => {
+//     let start = 0
+//     let end = arr.length - 1
+//     while(start <= end) {
+//         let middle = Math.floor((start + end) / 2)
+//         if(value === arr[middle]) {
+//             return value
+//         }
+
+//         if (value > arr[middle]) {
+//             start  = middle + 1
+//         } else {
+//             end  = middle - 1
+//         }
+
+//     }
+//     return false
+// }
+
+// console.log(binarySearch(result, 11))
+
+
+// 4) Пузырьковая сортировка
+
+// const arr = [-5, 2, 3, 0, 1, 4, 100, 104, 102]
+
+// const bubbleSort = (arr) => {
+//     for(let i = 0; i < arr.length; i++) {
+//         for(let j = 0; j < arr.length; j++) {
+//             if(arr[j + 1] < arr[j]) {
+//                 const tmp = arr[j]
+//                 arr[j] = arr[j + 1]
+//                 arr[j + 1] = tmp
+//             }
+//         }
+//     }
+// }
+
+
+// const bubbleSort = (arr) => {
+//     for(let i = 0; i < arr.length; i++) {
+//         for(let j = 0; j < arr.length; j++) {
+//             if(arr[j + 1] < arr[j]) {
+//                 let tmp = arr[j]
+//                 arr[j] = arr[j + 1]
+//                 arr[j + 1] = tmp
+//             }
+//         }
+//     }
+//     return arr
+// }
+
+// console.log(bubbleSort(arr))
+
+// const arr = [-5, 2, 3, 0, 1, 4, 100, 104, 102]
+
+
+// const bubbleSort = (arr) => {
+//     for(let i = 0; i < arr.length; i++) {
+//         for(let j = 0; j < arr.length; j++) {
+//             if (arr[j + 1] < arr[j]) {
+//                 const tmp = arr[j]
+//                 arr[j] = arr[j + 1]
+//                 arr[j + 1] = tmp
+//             }
+//         }
+//     }
+//     return arr
+// }
+
+// console.log(bubbleSort(arr))
+
+
+// const binarySearch = (arr, value) => {
+//     let start = 0
+//     let end = arr.length - 1
+//     while(start <= end) {
+//         let middle = Math.floor((start + end) / 2)
+//         if(value === arr[middle]) {
+//             return value
+//         }
+
+//         if(value > arr[middle]) {
+//             start = middle + 1
+//         } else {
+//             end = middle - 1
+//         }
+
+//     }
+//     return false
+// }
+
+
+// const resultSearch = binarySearch(resultSort, 17)
+// console.log(resultSearch)
+
+// const arr = [-5, 2, 3, 0, 1, 4, 100, 104, 102]
+
+// const bubbleSort = (arr) => {
+//     for(let i = 0; i < arr.length; i++) {
+//         for(let j = 0; j < arr.length; j++) {
+//             if(arr[j + 1] < arr[j]) {
+//                 const temporary = arr[j]
+//                 arr[j] = arr[j + 1]
+//                 arr[j + 1] = temporary
+//             }
+//         }
+//     }
+//     return arr
+// }
+
+// console.log(bubbleSort(arr))
+
+
+// const factorial = (n) => {
+//     if (n <= 1) {
+//         return 1
+//     }
+
+//     return n * factorial( n - 1 )
+// }
+
+// console.log(factorial(5))
+
+// const fibonachi = (n) => {
+//     if(n === 1 || n === 2) {
+//         return 1
+//     }
+
+//     return fibonachi(n - 1) + fibonachi(n - 2)
+// }
+
+// console.log(fibonachi(8))
+
+// 5) Быстрая сортировка - O(log2n * n)
+
+
+// const arr = [-5, 2, 3, 0, 1, 4, 100, 104, 102]
+
+// const quickSort = (arr) => {
+//     if(arr.length <= 1) {
+//         return arr
+//     }
+//     let pivotIndex = Math.floor((arr.length / 2)) // нахождение опорного элемента 
+//     let pivot = arr[pivotIndex] // получаем сам опорный элемент
+//     let less = [] // меньше чем опорный
+//     let greater = [] // больше чем опорный
+//     for(let i = 0; i < arr.length; i++) {
+//         if(i === pivotIndex) 
+//         continue
+//         if(arr[i] < pivot) {
+//             less.push(arr[i])
+//         } else {
+//             greater.push(arr[i])
+//         }
+//     }
+//     return [...quickSort(less), pivot, ...quickSort(greater)]
+// }
+
+// console.log(quickSort(arr))
+
+
+// const arr = [3, 2, 1, 5, 3, 11, 0]
+
+// const quickSort = (arr) => {
+//     if (arr.length < 2) {
+//         return arr
+//     }
+
+//     const pivot = arr[0];
+//     const less = [] // массив для меньшей половины
+//     const greater = [] // массив для большей половины
+
+//     for(let i = 1; i < arr.length; i++) {
+//         if (arr[i] <= pivot) {
+//             less.push(arr[i])
+//         } else {
+//             greater.push(arr[i])
+//         }
+//     }
+//     console.log(less, pivot, greater)
+
+//     return [...quickSort(less), pivot, ...quickSort(greater)]
+// }
+
+// console.log(quickSort(arr))
+
+
+const arr = [3, 2, 1, 5, 3, 11, 0]
+
+const quickSort = (arr) => {
+    if (arr.length > 2) {
+        return arr
     }
-    return arr
-}
 
-const result = removeDuplication(arr)
-console.log(...result)
+    let pivot = arr[0]
+    let less = [] // для меньшей части
+    let greater = [] // для большей части
+
+    for (let i = 1; i < arr.length; i++){
+        if (arr[i] <= pivot) {
+            less.push(arr[i])
+        } else {
+            greater.push(arr[i])
+        }
+    }
+    return [...quickSort(less), pivot, ...quickSort(greater)]
+ }
+
+console.log(quickSort(arr))
+
+
+
+
+
+
+
+
+
+
+
+//Бинарный поиск рекурсией
+
+// const arr = [-5, 2, 3, 0, 1, 4, 100, 104, 102]
+
+// const recursiveBinarySearch = (array, item, start, end) => {
+//     let middle = Math.floor((start + end) / 2)
+//     if (item === array[middle]) {
+//         return item
+//     }
+
+//     if (item < array[middle]) {
+//         return recursiveBinarySearch(array, item, start, middle - 1)
+//     } else {
+//         return recursiveBinarySearch(array, item, middle + 1, end)
+//     }
+// }
+
+// console.log(recursiveBinarySearch(arr, 104, 0, arr.length ))
