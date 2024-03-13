@@ -1,4 +1,5 @@
-//Решил: 1, 2, 3, 4, 5, 10
+//Решил: 1, 2, 3, 4, 5, 10, 6
+//Остались: 7, 8, 9
 
 //Задача номер 1 ================================================
 
@@ -67,7 +68,7 @@ console.log(stringLength('dwdwd wdwd sfsf as'))
 
 
 
-//Задача номер 5 =================================================
+//Задача номер 5 ====================================================
 
 function upRegister(str) {
     return str.trim().split(/\s+/).map(w => {
@@ -85,8 +86,7 @@ console.log(upRegister('привет боб'))
 // }).join(' ')) 
 
 
-
-//Задача номер 4 ================================================
+//Задача номер 4 ====================================================
 
 function testTask(str, num) {
     const newStr = str.length // получаем длину строки 
@@ -96,13 +96,13 @@ function testTask(str, num) {
         return str.slice(0, num) + '...' // извлекаем часть строки и тем самым делаем ограничение
     } else {
         return str
-    }ы
+    }
     
 }
 
 console.log(testTask('sdsdsds', 3))
 
-//Задача номер 3 ================================================
+//Задача номер 3 =====================================================
 
 let inp = prompt("введите количество подмассивов")
     let arr = []
@@ -129,7 +129,7 @@ let inp = prompt("введите количество подмассивов")
     }
 
 
-// Задача номер 10  ================================================
+// Задача номер 10  ====================================================
 
 let array = []
 
@@ -144,6 +144,24 @@ const func = (n) => {
 
 func(5)
 console.log(array)
+
+//Задача номер 6 ========================================================
+
+const copyElByArray = () => {
+    let arr = [[], []]
+    for(let i = 0; i < 2; i++) {
+        let enterNum = prompt(`Введите кол-во чисел в ${i} массиве`)
+        for(let j = 0; j < enterNum; j++) {
+            let enterNum = prompt(`Введите ${j} элемент массива`)
+            arr[i].push(enterNum) // на выходе получаем готовый массив
+        }
+    }
+    let enterNum = prompt(`Введите с какого индекса должна происходить вставка`)
+    arr.push(enterNum)
+
+    let newArr = [...arr[1].slice(0, arr[2]), ...arr[0], ...arr[1].slice(arr[2])]
+    console.log(newArr)
+}
 
 
 // function recurse(n) {
@@ -163,21 +181,59 @@ console.log(array)
 
 // console.log(str.substring(0, 9))
 
-//Тренировка с рекурсией и подмассивами - на выходе должны получить целый массив чисел
+//Задача номер 7 =========================================================
 
-function flatten(...data) {
-   console.log(data)
-   const result = []
-   for(let i = 0;i < data.length; i++){
-         const currentEl = data[i]
-         if (Array.isArray(currentEl)){
-            result.push(...flatten(...currentEl))
-         } else {
-            result.push(currentEl)
-         }
-   }
-   return result
+const arrFalseValue = ['hello', 0, '', false, 54, undefined ,'Egor', -0, 77, null, NaN]
+
+const removeFalseValue = (arr) => {
+    let trueValue = []
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i]) {
+            trueValue.push(arr[i])
+        }
+    }
+    return trueValue
 }
 
-console.log(flatten(1, [2, [[3]]], 4, 5, [6, [7]]))
-console.log(flatten('a', ['b', 2], 3, null, [[4], ['c']]))
+console.log(removeFalseValue(arrFalseValue))
+
+//Задача номер 8 =========================================================
+
+// Написать функцию, которая на вход принимает массив, состоящий из двух строк. 
+// Функция должна вернуть true, если строка в первом элементе массива содержит все
+// буквы строки во втором элементе массива (регистр игнорируется).
+
+const arrStr = ['hello', 'Hello']
+
+const arrStrComparsion = (arr) => {
+    for(let i = 0; i < arr.length - 1; i++) {
+            if (arr[i].toLowerCase() === arr[i + 1].toLowerCase()) {
+                return true
+            }
+            // console.log(arr[i + 1].toLowerCase(), arr[i].toLowerCase())
+    }
+    return arr
+}
+
+console.log(arrStrComparsion(arrStr))
+
+//Задача номер 9 =========================================================
+
+// Написать функцию, которая на вход принимает масссив и целое число. Функция
+// должна разбить массив (первый аргумент) на группы длиной size (второй агрумент) и
+// вернуть их в виде двумерного массива
+
+const arrSmash = ['hello', 123, 33, 'Egor', 99]
+
+const arrSmashFunc = (arr, n) => {
+    let arrTwo = []
+    let sizesArr = n // указываем размер двумерного массива(сколько групп будет в нем)
+    for(let i = 0; i < sizesArr ; i++) {
+        arrTwo.push(arr.slice(i, i + sizesArr + n ))
+    }
+
+    return arrTwo
+}
+
+console.log(arrSmashFunc(arrSmash, 4))
+
