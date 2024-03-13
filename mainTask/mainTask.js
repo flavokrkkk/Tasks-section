@@ -72,11 +72,11 @@ console.log(stringLength('dwdwd wdwd sfsf as'))
 
 function upRegister(str) {
     return str.trim().split(/\s+/).map(w => {
-        return w[0].toUpperCase() + w.substring(1)
+        return w[0].toUpperCase() + w.substring(1).toLowerCase()
     }).join(' ')
 }
 
-console.log(upRegister('привет боб'))
+console.log(upRegister('привЕт мирРРРРРРР'))
 
 
 // const str = 'hello bob'
@@ -103,7 +103,6 @@ function testTask(str, num) {
 console.log(testTask('sdsdsds', 3))
 
 //Задача номер 3 =====================================================
-
   
 const subArray = (arr) => {
     let result = []
@@ -117,7 +116,6 @@ const subArray = (arr) => {
                 result.push(currentEl[j])
             }
         }
-
     }
 
 return result
