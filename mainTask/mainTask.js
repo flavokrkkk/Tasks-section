@@ -104,32 +104,60 @@ console.log(testTask('sdsdsds', 3))
 
 //Задача номер 3 =====================================================
   
-const subArray = (arr) => {
-    let result = []
-    for(let i = 0; i < arr.length; i++) {
-        let currentEl = arr[i]
-        for(let j = 0; j < currentEl.length; j++) {
-            let maxEl = j 
-            console.log(currentEl[j])
-            if(currentEl[maxEl] < currentEl[j + 1]) {
-            } else {
-                result.push(currentEl[j])
-            }
-        }
-    }
+// const subArray = (arr) => {
+//     let result = []
+//     for(let i = 0; i < arr.length; i++) {
+//         let currentEl = arr[i]
+//         for(let j = 0; j < currentEl.length; j++) {
+//             let maxEl = j 
+//             console.log(currentEl[j])
+//             if(currentEl[maxEl] < currentEl[j + 1]) {
+//             } else {
+//                 result.push(currentEl[j])
+//             }
+//         }
+//     }
 
-return result
-}
+// return result
+// }
 
 
-console.log(subArray([[1, 2, 3, 11], [4,  5, 6], [6, 7, 8, 9]]))
+  
+// const subArray = (array) => {
+//    let item = array.map(gav => Math.max(gav))
+//    return item
+// }
+
+
+
+// console.log(subArray([[1, 2, 3, 11], [4,  5, 6], [6, 7, 8, 9]]))
+
+//Задача - найти наибольший/наименьший элемент в массиве
+
+const arr = [-5, 2, 3,11111, 1, 4, 104440, 102, 1222]
+
+// const selectionSort = (arr) => {
+//     let max = arr[0]
+//     for(let i = 0; i < arr.length; i++) {
+//         if(max < arr[i]) {
+//             max = arr[i]
+//         }
+//     }
+//     return [max]
+// }
+
+const arrMax = (arr) => {
+   
+
+const result = arrMax(arr)
+console.log(result)
 
 
 // Задача номер 10  ====================================================
 
 let array = []
 
-const func = (n) => {
+const func = ([],n) => {
    if (n <= 0) {
       return 1
    } else {
@@ -138,7 +166,7 @@ const func = (n) => {
    }
 }
 
-func(5)
+func(10)
 console.log(array)
 
 //Задача номер 6 ========================================================
