@@ -317,20 +317,39 @@
 // }
 
 
-// const flatten = (...data) => {
-//     let result = []
-//     for(let i = 0; i < data.length; i++) {
-//         let currentEl = data[i]
-//         if(Array.isArray(currentEl)) {
-//             result.push(...flatten(...currentEl))
-//         } else {
-//             result.push(currentEl)
-//         } 
-//     }
-//     return result
-// }
+const flatten = (...data) => {
+    let result = []
+    for(let i = 0; i < data.length; i++) {
+        let currentEl = data[i]
+        if(Array.isArray(currentEl)) {
+            result.push(...flatten(...currentEl))
+        } else  {
+            result.push(currentEl)
+        } 
+    }
+    return result
+}
 
 
-// console.log(flatten(1, [[2, [[[3]]]], [[[4, [5]]], [[6, [7]]]]]))
-// console.log(flatten('a', ['b', 2], 3, null, [[4], ['c']]))
+const subArray = (arr) => {
+    let result = []
+    for(let i = 0; i < arr.length; i++) {
+        let currentEl = arr[i]
+        for(let j = 1; j < currentEl.length; j++) {
+            let maxEl = i
+            if(currentEl[maxEl] < currentEl[j]) {
+                result.push(currentEl[j])
+            }
+        }
+        // if(currentEl.length) {
+
+        //     // result.push(...currentEl)
+        // }
+    }
+
+return result
+}
+
+
+console.log(subArray([[1, 2, 3], [4, 5], [6, 7, 8, 9]]))
 

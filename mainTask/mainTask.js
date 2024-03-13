@@ -104,29 +104,27 @@ console.log(testTask('sdsdsds', 3))
 
 //Задача номер 3 =====================================================
 
-let inp = prompt("введите количество подмассивов")
-    let arr = []
-    for (let i = 0; i < inp; i ++){ //создаем массив с массивами
-        arr.push([])
-    }
-    for (let i = 0; i < inp; i ++){
-        let inpN = prompt(`введите количество чисел в  ${i} массиве`) //узнаем сколько элементов в каждом массиве и пушим их 
-        for (let j = 0; j < inpN; j ++){
-            let inpN = prompt(`введите ${j} элемент массива`)
-            arr[i].push(inpN) //на выходе получаем готовый array
-        }
-    }
-    
-    let newArr = [] 
-    for (let i = 0; i < inp; i ++){ 
-        let max = -Infinity
-        for (let j = 0; j < arr[i].length; j ++){ //последовательно ходим по значениям каждого подмассива и сравниваем с max
-            if (arr[i][j] > max){
-                max = arr[i][j]
+  
+const subArray = (arr) => {
+    let result = []
+    for(let i = 0; i < arr.length; i++) {
+        let currentEl = arr[i]
+        for(let j = 0; j < currentEl.length; j++) {
+            let maxEl = j 
+            console.log(currentEl[j])
+            if(currentEl[maxEl] < currentEl[j + 1]) {
+            } else {
+                result.push(currentEl[j])
             }
         }
-        newArr.push(max) //на выходе получаем newArr с готовыми значениями
+
     }
+
+return result
+}
+
+
+console.log(subArray([[1, 2, 3, 11], [4,  5, 6], [6, 7, 8, 9]]))
 
 
 // Задача номер 10  ====================================================
@@ -203,7 +201,7 @@ console.log(removeFalseValue(arrFalseValue))
 // Функция должна вернуть true, если строка в первом элементе массива содержит все
 // буквы строки во втором элементе массива (регистр игнорируется).
 
-const arrStr = ['hello', 'Hello']
+const arrStr = ['heLlo', 'HeLlo']
 
 const arrStrComparsion = (arr) => {
     for(let i = 0; i < arr.length - 1; i++) {
