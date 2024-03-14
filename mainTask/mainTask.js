@@ -104,88 +104,33 @@ console.log(testTask('sdsdsds', 3))
 
 //Задача номер 3 =====================================================
   
-// const subArray = (arr) => {
-//     let result = []
-//     for(let i = 0; i < arr.length; i++) {
-//         let currentEl = arr[i]
-//         for(let j = 0; j < currentEl.length; j++) {
-//             let maxEl = j 
-//             console.log(currentEl[j])
-//             if(currentEl[maxEl] < currentEl[j + 1]) {
-//             } else {
-//                 result.push(currentEl[j])
-//             }
-//         }
-//     }
+const subArrayMax = (arr) => {
+    return arr.map(i => Math.max(...i))
+}
 
-// return result
-// }
-
-
-  
-// const subArray = (array) => {
-//    let item = array.map(gav => Math.max(gav))
-//    return item
-// }
-
-
-
-// console.log(subArray([[1, 2, 3, 11], [4,  5, 6], [6, 7, 8, 9]]))
-
-//Задача - найти наибольший/наименьший элемент в массиве
-
-const arr = [-5, 2, 3,11111, 1, 4, 104440, 102, 1222]
-
-// const selectionSort = (arr) => {
-//     let max = arr[0]
-//     for(let i = 0; i < arr.length; i++) {
-//         if(max < arr[i]) {
-//             max = arr[i]
-//         }
-//     }
-//     return [max]
-// }
-
-const arrMax = (arr) => {
-   
-
-const result = arrMax(arr)
-console.log(result)
-
+console.log(subArrayMax([[1, 2, 3], [4, 5], [6, 7, 8, 9]]))
 
 // Задача номер 10  ====================================================
 
-let array = []
-
-const func = ([],n) => {
+const func = (n, arr) => {
    if (n <= 0) {
-      return 1
+      return arr
    } else {
-      array.push(n)
-      return func(n - 1)
+      arr.push(n)
+      return func(n - 1, arr)
    }
 }
 
-func(10)
-console.log(array)
+console.log(func(5, []))
 
 //Задача номер 6 ========================================================
 
-const copyElByArray = () => {
-    let arr = [[], []]
-    for(let i = 0; i < 2; i++) {
-        let enterNum = prompt(`Введите кол-во чисел в ${i} массиве`)
-        for(let j = 0; j < enterNum; j++) {
-            let enterNum = prompt(`Введите ${j} элемент массива`)
-            arr[i].push(enterNum) // на выходе получаем готовый массив
-        }
-    }
-    let enterNum = prompt(`Введите с какого индекса должна происходить вставка`)
-    arr.push(enterNum)
-
-    let newArr = [...arr[1].slice(0, arr[2]), ...arr[0], ...arr[1].slice(arr[2])]
-    console.log(newArr)
+const copyElByArray = (arr1, arr2, n) => {
+    arr2.splice(n, 0, ...arr1)
+    return arr2
 }
+
+console.log(copyElByArray([1, 2, 3], [4, 5], 1))
 
 
 // function recurse(n) {
@@ -230,13 +175,7 @@ console.log(removeFalseValue(arrFalseValue))
 const arrStr = ['heLlo', 'HeLlo']
 
 const arrStrComparsion = (arr) => {
-    for(let i = 0; i < arr.length - 1; i++) {
-            if (arr[i].toLowerCase() === arr[i + 1].toLowerCase()) {
-                return true
-            }
-            // console.log(arr[i + 1].toLowerCase(), arr[i].toLowerCase())
-    }
-    return arr
+    return arr[1] == arr[1].split('').map(i => {return arr[0].toLowerCase().split('').find(j => j === i)}).join('')
 }
 
 console.log(arrStrComparsion(arrStr))
@@ -259,5 +198,16 @@ const arrSmashFunc = (arr, n) => {
     return arrTwo
 }
 
-console.log(arrSmashFunc(arrSmash, 4))
+console.log(arrSmashFunc(arrSmash, 2))
 
+
+const arr = [1, 2, 3, 4, 5, 6]
+
+const bbb = (arr, n) => {
+    let  ff = []
+    for(let i = 0; i < n; i++) {
+        ff.push(arr.slice(0, n))
+    }
+    return ff
+}
+console.log(bbb(arr, 3))
