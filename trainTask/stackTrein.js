@@ -317,39 +317,255 @@
 // }
 
 
-const flatten = (...data) => {
-    let result = []
-    for(let i = 0; i < data.length; i++) {
-        let currentEl = data[i]
-        if(Array.isArray(currentEl)) {
-            result.push(...flatten(...currentEl))
-        } else  {
-            result.push(currentEl)
-        } 
+// const flatten = (...data) => {
+//     let result = []
+//     for(let i = 0; i < data.length; i++) {
+//         let currentEl = data[i]
+//         if(Array.isArray(currentEl)) {
+//             result.push(...flatten(...currentEl))
+//         } else  {
+//             result.push(currentEl)
+//         } 
+//     }
+//     return result
+// }
+// ПОПРОБОВАТЬ МЕТОД МАССИВОВ FILTER ЛИБО FIND
+// const subArray = (arr) => {
+//     let result = []
+//     for(let i = 0; i < arr.length; i++) {
+//         let currentEl = arr[i]
+//         for(let j = 0; j < currentEl.length; j++) {
+//             let maxEl = j 
+//             console.log(currentEl[j])
+//             if(currentEl[maxEl] < currentEl[j + 1]) {
+//             } else {
+//                 result.push(currentEl[j])
+//             }
+//         }
+
+//     }
+
+// return result
+// }
+
+
+// console.log(subArray([[1, 2, 3, 11], [4,  5, 6], [6, 7, 8, 9]]))
+
+// const boolWord = (bool) => {
+//     return bool? 'Yes' : 'No'
+// }
+
+// console.log(boolWord(true))
+
+// const greet = () => {
+//     return 'hello world!'
+// }
+// console.log(greet())
+
+// const isPalindrom = (number) => {
+
+// }
+
+// console.log(isPalindrom(1001))
+// console.log(isPalindrom(12345))
+// console.log(isPalindrom(123321))
+
+
+//Крокетный клуб Western Suburbs имеет две категории членства: старшую и открытую. Им нужна ваша помощь с формой заявки, в которой потенциальным членам будет указано, к какой категории они будут отнесены.
+
+// Чтобы стать старшим, члену должно быть не менее 55 лет и иметь гандикап более 7. В этом крокетном клубе гандикапы варьируются от -2 до +26; чем лучше игрок, тем ниже гандикап.
+
+// Вход
+// Входные данные будут состоять из списка пар. Каждая пара содержит информацию об одном потенциальном участнике. Информация состоит из целого числа, обозначающего возраст человека, и целого числа, обозначающего инвалидность человека.
+
+// Выход
+// Вывод будет состоять из списка строковых значений (в Haskell и C: Openили Senior), указывающих, должен ли соответствующий член быть помещен в старшую или открытую категорию.
+
+// Пример
+
+// const input =  [[18, 20], [45, 2], [61, 12], [37, 6], [21, 21], [78, 9]]
+
+// const openOrSenior = (arr) => {
+//     let output = []
+//     for(let i = 0; i < arr.length; i++) {
+//         let currentEl = i
+//         if(arr[currentEl][0] < 55){
+//             arr[currentEl] = 'Open'
+//         } else if(arr[currentEl][1] < 8) {
+//             arr[currentEl] = 'Open'
+//         } else {
+//             arr[currentEl] = 'Senior'
+//         }
+//     }
+//     return output = [...arr]
+// }
+
+// openOrSenior(input)
+
+// const input =  [[18, 20], [45, 2], [61, 12], [37, 6], [21, 21], [78, 9]]
+
+// const openOrSenior = (arr) => arr.map(([age, rang]) => age > 54 && rang > 7 ? 'Senior' : 'Open')
+// console.log(openOrSenior(input))
+
+// const input = [-1023, 1, -2]
+
+// const oddOrEven = (arr) => {
+//     if(arr.length === 0) {
+//         return 'even'
+//     }
+//     for(let i = 0; i < arr.length; i++) {
+//         if(arr.length = 1 && arr[i] % 2 === 0) {
+//             return 'even'
+//         }
+//         let sum = arr[i] + arr[i  + 1]
+//         if(sum % 2 === 0) return 'even' 
+//         if(sum % 2 !== 0) return 'odd'
+//     }
+// }
+
+// console.log(oddOrEven(input))
+// console.log(typeof(0))
+
+// const input = [-1023, -1, 3]
+
+// const oddOrEven = (arr) => {
+//     let sum = 0
+//     if(arr.length === 0) {
+//         arr.push(0)
+//     }
+//     for(let i = 0; i < arr.length; i++){
+//         sum += arr[i]
+//     }
+
+//     if(sum === 0) {
+//         return 'even'
+//      }
+//     if(sum % 2 === 0) {
+//         return 'even'
+//      } else {
+//         return 'odd'
+//      }
+      
+// }
+
+// console.log(oddOrEven(input))
+
+// const highAndLow = (number) => {
+    
+// }
+
+
+// console.log(highAndLow("42 5 2 11 1 3"));  // return "5 1"
+
+//Панаграммы 
+
+// const isPangram = (string) => {
+//     let cleanStringArr = string.replace(/[^A-Za-z]/g, '').toLowerCase().split('')
+//     console.log(cleanStringArr)
+//     return [...new Set(cleanStringArr)].length === 26 ? true : false
+// }
+
+// isPangram("The quick brown fox jumps over the lazy dog.")
+
+
+// const binaryArrayToNumber = arr => {
+//     let str = arr.join('')
+//     return parseInt(str, 2)
+// }
+// binaryArrayToNumber([0, 1, 1, 0])
+
+// console.log(binaryArrayToNumber([1, 0, 0, 1]))
+
+// let num = '1001'
+
+// console.log(parseInt(num, 2))
+
+
+
+// let dd = [1, 0, 0, 1]
+// let str = dd.join(' ')
+// console.log(str === num)
+// console.log(parseInt(dd, 2))
+
+// let a = [1, 0, 0, 1].join('')
+// console.log(typeof(a))
+
+// console.log(parseInt(a, 2))
+
+
+// const grow = x => x.reduce((a,b) => a * b)
+// grow([1, 2, 3, 4])
+
+// function expandedForm(num) {
+//     let arr = num.toString().split('')
+//     let newStr
+//     for(let i = 0; i < arr.length; i++) {
+//         if(arr.length < 3) {
+//            newStr = `${arr[0] + 0} + ${arr[1]}`
+//         }
+//         if (arr.length > 3) {
+        
+//         }
+//     }
+
+//     return newStr
+// }
+
+// console.log(expandedForm(70304))
+// let n = 70304
+// console.log(n.toString().split(''))
+
+
+// const fff = (num) => {
+//     let arr = num.toString().split('')
+//     // let f = arr.map(el => 0).join('').slice(0, 2)
+//     // console.log(f)
+    
+//    return arr.reduce((a, b) => {
+//      return arr.length < 3 ? `${a + 0} + ${b}` : `${a}${b > 0 ? b = 0 : b} `
+//     })
+// }
+
+// console.log(fff(780))
+
+// const www = (num) => {
+//     let str = num.toString()
+//     for(let i = 0; i < str.length; i++) {
+//         let nuller = 0
+//         if(str.length < 3) {
+//             return `${str[0] + 0} + ${str[1]}`
+//         }
+//         if (str.length === 3) {
+//           return `${str[0] + 0 + 0} + ${str[1] + 0} + ${str[str.length - 1]}`
+//         }
+
+//         if (str.length === 4) {
+//             console.log('sss')
+//             return `${str[0] + nuller + nuller + nuller} + ${str[1] + nuller + nuller} + ${str[str.length - 2] + nuller} + ${str[str.length - 1]}`
+//           }
+
+//         if (str.length >= 5) {
+//             console.log(str[1])
+//             return `${str[0] + nuller + nuller + nuller + nuller} + ${str[1] === '0' ? str[2] + nuller + nuller : str[1] + nuller + nuller + nuller} + ${str[3] === '0' ? str[4] : str[3]}`
+//         }
+//     }
+//     return str
+// }
+
+// www(70304)
+
+
+// const disemvowel = (str) => str.replace(/[aouei]/gi, '')
+// disemvowel('This website is for losers LOL!')
+
+// const descendingOrder = (n) => n.toString().split('').reverse().join('')
+// console.log(descendingOrder(15))
+
+function descendingOrder(n){
+    let num = n.toString()
+    for(let i = 0; i < num.length; i++) {
+         console.log(num[i])
     }
-    return result
 }
 
-
-const subArray = (arr) => {
-    let result = []
-    for(let i = 0; i < arr.length; i++) {
-        let currentEl = arr[i]
-        for(let j = 1; j < currentEl.length; j++) {
-            let maxEl = i
-            if(currentEl[maxEl] < currentEl[j]) {
-                result.push(currentEl[j])
-            }
-        }
-        // if(currentEl.length) {
-
-        //     // result.push(...currentEl)
-        // }
-    }
-
-return result
-}
-
-
-console.log(subArray([[1, 2, 3], [4, 5], [6, 7, 8, 9]]))
-
+console.log(descendingOrder(15))

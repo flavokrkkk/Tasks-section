@@ -803,29 +803,29 @@
 // 5) Быстрая сортировка - O(log2n * n)
 
 
-// const arr = [-5, 2, 3, 0, 1, 4, 100, 104, 102]
+const arr = [-5, 2, 3, 0, 1, 4, 100, 104, 102]
 
-// const quickSort = (arr) => {
-//     if(arr.length <= 1) {
-//         return arr
-//     }
-//     let pivotIndex = Math.floor((arr.length / 2)) // нахождение опорного элемента 
-//     let pivot = arr[pivotIndex] // получаем сам опорный элемент
-//     let less = [] // меньше чем опорный
-//     let greater = [] // больше чем опорный
-//     for(let i = 0; i < arr.length; i++) {
-//         if(i === pivotIndex) 
-//         continue
-//         if(arr[i] < pivot) {
-//             less.push(arr[i])
-//         } else {
-//             greater.push(arr[i])
-//         }
-//     }
-//     return [...quickSort(less), pivot, ...quickSort(greater)]
-// }
+const quickSort = (arr) => {
+    if(arr.length <= 1) {
+        return arr
+    }
+    let pivotIndex = Math.floor((arr.length / 2)) // нахождение опорного элемента 
+    let pivot = arr[pivotIndex] // получаем сам опорный элемент
+    let less = [] // меньше чем опорный
+    let greater = [] // больше чем опорный
+    for(let i = 0; i < arr.length; i++) {
+        if(i === pivotIndex) 
+        continue
+        if(arr[i] < pivot) {
+            less.push(arr[i])
+        } else {
+            greater.push(arr[i])
+        }
+    }
+    return [...quickSort(less), pivot, ...quickSort(greater)]
+}
 
-// console.log(quickSort(arr))
+console.log(quickSort(arr))
 
 
 // const arr = [3, 2, 1, 5, 3, 11, 0]
@@ -854,37 +854,33 @@
 // console.log(quickSort(arr))
 
 
-const arr = [3, 2, 1, 5, 3, 11, 0]
+// const arr = [3, 2, 1, 5, 3, 11, 0]
 
-const quickSort = (arr) => {
-    if (arr.length > 2) {
-        return arr
-    }
+// const quickSort = (arr) => {
+//     if (arr.length < 1) {
+//         return arr
+//     }
 
-    let pivot = arr[0]
-    let less = [] // для меньшей части
-    let greater = [] // для большей части
+//     let pivotIndex = Math.floor((arr.length / 2))
+//     let pivot = arr[pivotIndex]
+//     let less = []
+//     let greater = []
+    
+//     for(let i = 0; i < arr.length; i++) {
+//         if(i === pivotIndex)
+//             continue
 
-    for (let i = 1; i < arr.length; i++){
-        if (arr[i] <= pivot) {
-            less.push(arr[i])
-        } else {
-            greater.push(arr[i])
-        }
-    }
-    return [...quickSort(less), pivot, ...quickSort(greater)]
- }
+//         if (arr[i] < pivot) {
+//             less.push(arr[i])
+//         } else {
+//             greater.push(arr[i])
+//         }
+//     }
 
-console.log(quickSort(arr))
+//     return [...quickSort(less), pivot, ...quickSort(greater)]
+//  }
 
-
-
-
-
-
-
-
-
+// console.log(quickSort(arr))
 
 
 //Бинарный поиск рекурсией
@@ -905,3 +901,340 @@ console.log(quickSort(arr))
 // }
 
 // console.log(recursiveBinarySearch(arr, 104, 0, arr.length ))
+
+
+// const arr = [3, 5, 2, 6, 11, -4, 7]
+
+// const quickSort = (arr) => {
+//     if(arr.length < 2) {
+//         return arr
+//     } 
+
+//     let pivotIndex = Math.floor(arr.length / 2)
+//     let pivot = arr[pivotIndex]
+//     let less = []
+//     let greater = []
+
+//     for(let i = 0; i < arr.length; i++) {
+//         if(pivotIndex === i) 
+//             continue;
+//         if(pivot > arr[i]) {
+//             less.push(arr[i])
+//         } else {
+//             greater.push(arr[i])
+//         }
+//     }
+
+//     return [...quickSort(less), pivot, ...quickSort(greater)]
+// }
+
+// console.log(quickSort(arr))
+
+
+// const arr1 = [3, 5, 2, 6, 11, -4, 7]
+
+// const selectedSort = (arr) => {
+//     for(let i = 0; i < arr.length - 1; i++) {
+//         let minIndex = i
+//         for(let j = i + 1; j < arr.length; j++) {
+//             if (arr[minIndex] > arr[j]) {
+//                 minIndex = j
+//             }
+//         }
+//         const temporary = arr[i]
+//         arr[i] = arr[minIndex]
+//         arr[minIndex] = temporary
+//     }
+//     return arr
+// }
+
+// console.log(selectedSort(arr1))
+
+
+// const arr2 = [3, 5, 2, 6, 11, -4, 7]
+
+// const bubbleSort = (arr) => {
+//     for(let i = 0; i < arr.length; i++) {
+//         for(let j = 0; j < arr.length; j++) {
+//             if(arr[j + 1] < arr[j]) {
+//                 let temporary = arr[j]
+//                 arr[j] = arr[j + 1]
+//                 arr[j + 1] = temporary
+//             }
+//         }
+//     }
+//     return arr
+// }
+
+// const sort = bubbleSort(arr2)
+
+
+// const recursiveBinarySearch = (arr, value, start, end) => {
+//     let middle = Math.floor((start + end) / 2)
+//     if (value === arr[middle]) {
+//         return value
+//     }
+
+//     if(value < arr[middle]) {
+//        return recursiveBinarySearch(arr, value, start, middle - 1 )
+//     }
+//     if (value > arr[middle]) {
+//         return recursiveBinarySearch(arr, value, middle + 1, end)
+//     }
+// }
+
+// console.log(recursiveBinarySearch(sort, 11, 0, sort.length))
+
+
+
+// const arr = [3, 5, 2, 6, 11, -4, 7]
+
+// const quickSort = (arr) => {
+//     if (arr.length < 2) {
+//         return arr
+//     }
+
+//     const pivotIndex = Math.floor(arr.length / 2)
+//     const pivot = arr[pivotIndex]
+//     let less = [] // массив для наименьшей половины
+//     let greater = [] // массив для наибольшей половины
+
+//     for(let i = 0; i < arr.length; i++) {
+//         if(pivotIndex === i) 
+//         continue;
+//         if(arr[i] < pivot) {
+//             less.push(arr[i])
+//         } else {
+//             greater.push(arr[i])
+//         }
+//     }
+
+//     return [...quickSort(less), pivot, ...quickSort(greater)]
+// }
+
+// console.log('Быстрая сортировка: ', quickSort(arr))
+
+// const arr1 = [3, 5, 2, 6, 11, -4, 7]
+
+// const selectedSort = (arr) => {
+//     for(let i = 0; i < arr.length - 1; i++) {
+//         let indexMin = i
+//         for(let j = i + 1; j < arr.length; j++) {
+//             if(arr[indexMin] > arr[j]) {
+//                 indexMin = j
+//             }
+//         }
+
+//         const temporary = arr[i]
+//         arr[i] = arr[indexMin]
+//         arr[indexMin] = temporary
+//     }
+//     return arr
+// }
+
+// console.log('Сортировка выбором: ', selectedSort(arr1))
+
+// const arr2 = [3, 5, 2, 6, 11, -4, 7]
+
+// const bubbleSort = (arr) => {
+//     for(let i = 0; i < arr.length; i++) {
+//         for(let j = 0; j < arr.length; j++) {
+//             if (arr[j + 1] < arr[j]) {
+//                 const temporary = arr[j]
+//                 arr[j] = arr[j + 1]
+//                 arr[j + 1] = temporary
+//             }
+//         }
+//     }
+//     return arr
+// }
+
+// console.log(bubbleSort(arr2))
+
+// const binarySearch = (arr, value) => {
+//     let start = 0
+//     let end = arr.length
+//     while(start <= end) {
+//         let middle = Math.floor((start + end) / 2)
+//         if (value === arr[middle]) {
+//             return value
+//         }
+//         if (value < arr[middle]){
+//             end = middle - 1
+//         } else {
+//             start = middle + 1
+//         }
+//     }
+//     return false
+// }
+
+// console.log((binarySearch(bubbleSort(arr2), 111)))
+
+// const arrayList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+
+// const recursiveBinarySearch = (arr, value, start, end) => {
+//     let middle = Math.floor((start + end) / 2)
+//     if (value === arr[middle]) {
+//         return value
+//     }
+
+//     if (value < arr[middle]) {
+//         return recursiveBinarySearch(arr, item, start, middle - 1)
+//     }
+
+//     if (value > arr[middle]) {
+//         return recursiveBinarySearch(arr, item, middle + 1, end)
+//     }
+//     return false
+// }
+
+// console.log(recursiveBinarySearch(arrayList, 11, 0, arrayList.length - 1))
+
+
+// const array = [3, 8, 1, 10, 23, -5, 101]
+
+// const quickSorted = (arr) => {
+//     if(arr.length < 2) {
+//         return arr
+//     }
+
+//     let pivotIndex = Math.floor(arr.length/2)
+//     let pivot = arr[pivotIndex]
+//     let less = []
+//     let greater = []
+    
+//     for(let i = 0; i < arr.length; i++) {
+//         if(pivotIndex === i)
+//         continue;
+        
+//         if(arr[i] < pivot) {
+//             less.push(arr[i])
+//         } else {
+//             greater.push(arr[i])
+//         }
+//     }
+//     return [...quickSorted(less), pivot, ...quickSorted(greater)]
+// }
+
+// console.log(quickSorted(array))
+
+
+// const selectedSorted = (arr) => {
+//     for(let i = 0; i < arr.length - 1; i++){
+//         let minIndex = i
+//         for(let j = i + 1; j < arr.length; j++) {
+//                 if(arr[minIndex] > arr[j]) {
+//                     minIndex = j
+//                 }
+//             }
+
+//         let temporary = arr[i]
+//         arr[i] = arr[minIndex]
+//         arr[minIndex] = temporary
+//     }
+//     return arr
+// }
+
+// const array1 = [3, 8, 1, 10, 23, -5, 101]
+
+// console.log(selectedSorted(array1))
+
+// const array2 = [3, 8, 1, 10, 23, -5, 101]
+
+// const bubbleSorted = (arr) => {
+//     for(let i = 0; i < arr.length; i++) {
+//         for(let j = 0; j < arr.length; j++) {
+//             if (arr[j + 1] < arr[j]) {
+//                 let temporary = arr[j]
+//                 arr[j] = arr[j + 1]
+//                 arr[j + 1] = temporary
+//             }
+//         }
+//     }
+//     return arr
+// }
+
+// console.log(bubbleSorted(array2))
+
+// const binarySearched = (arr, value) => {
+//         let start = 0
+//         let end = arr.length - 1
+//         while(start <= end) {
+//             let middle = Math.floor((start + end) / 2)
+
+//             if (value === arr[middle]) {
+//                 return value
+//             }
+
+//             if (value > arr[middle]) {
+//                 start = middle + 1
+//             } else {
+//                 end = middle - 1
+//             }
+//         }
+//         return false
+// }
+
+// console.log(binarySearched(bubbleSorted(array2), 333))
+
+// const array23 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+// const recursiveBinarySearched = (arr, value, start, end) => {
+//         let middle = Math.floor((start + end) / 2)
+//         if(arr[middle] === value) {
+//             return value
+//         }
+
+//         if (value < arr[middle]) {
+//             return recursiveBinarySearched(arr, value, start, middle - 1)
+//         }
+
+//         if (value > arr[middle]) {
+//             return recursiveBinarySearched(arr, value, middle + 1, end)
+//         }
+// }
+
+// console.log(recursiveBinarySearched(array23, 7, 0 , array23.length))
+
+// 6) Связный список - структура данных
+
+
+class LinkedListNode {
+    constructor(value, next = null) {
+        this.value = value
+        this.next = next
+    }
+
+    toString() {
+        return `${this.value}`
+    }
+}
+
+class LinkedList {
+    constructor() {
+        this.head = null
+        this.tail = null
+    }
+
+    append(value) {
+        const newNode = new LinkedListNode(value)
+
+        if (!this.head || !this.tail) {
+            this.head = newNode
+            this.tail = newNode
+
+            return this
+        }
+
+        this.tail.next = newNode
+        this.tail = newNode
+
+        return this;
+    }
+}
+
+const list = new LinkedList()
+
+list.append(2).append(6).append(7).append(4)
+
+console.log(JSON.stringify(list))
